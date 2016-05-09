@@ -9,5 +9,7 @@ genres.list
 language.list
 movies.list
 plot.list
+actors.list
+actresses.list
 ```
 Simply run through the `Data_Prepare` notebook to create the data file. Other notebooks will use the generated data file.
