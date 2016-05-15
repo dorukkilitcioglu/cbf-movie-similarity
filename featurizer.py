@@ -54,15 +54,15 @@ class Featurizer():
 		else:
 			self.lda = None
 
-	def find_movie(self, title):
+	def find_movie(self, title, year = None):
 		""" Finds a movie with the given name substring. """
-		return [movie for movie in self.movies.keys() if title in movie[0]]
+		return [movie for movie in self.movies.keys() if title in movie[0] and (year is None or year == movie[1])]
 
 	def load_train(self, path):
 		""" Loads the data into memory and trains the featurizer. """
 		with io.open(path, 'r', encoding = 'latin-1') as f:
 			movies = json.load(f)
-			od = OrderedDict({(movie['title'],int(movie['year'])):{'plot':movie['plot'],'cast':set(movie['cast']), \
+			od = OrderedDict({(movie['title'],movie['year']):{'plot':movie['plot'],'cast':set(movie['cast']), \
 				'genres':set(movie['genres'])} \
 				for movie in movies}.items())
 			self.train(od)
