@@ -1,6 +1,8 @@
 # cbf-movie-similarity
 Content-based similar movie recommendation engine.
 
+We try to implement and improve https://www.cs.cmu.edu/~hovy/papers/03IUI-recommender.pdf
+
 In order to create the necessary data file, download and unzip the sample list files from the IMDB:  
 `ftp://ftp.fu-berlin.de/pub/misc/movies/database/`.  
 The necessary files are:
